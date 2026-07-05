@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slay the Spire 2 Bosses - Precise Moves</title>
+<style>
+  @page { size: A4 landscape; margin: 7mm; }
+  :root {
+    --bg: #f7f9fc;
+    --card: #ffffff;
+    --ink: #111827;
+    --muted: #4b5563;
+    --line: #cbd5e1;
+    --accent: #0f766e;
+    --tile: #0b1220;
+    --warn: #92400e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 11px/1.25 Arial, Helvetica, sans-serif;
+  }
+  .page {
+    max-width: 285mm;
+    min-height: 196mm;
+    margin: 0 auto;
+    padding: 7mm;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 4px;
+  }
+  h1 {
+    font-size: 17px;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: .2px;
+  }
+  .note {
+    color: var(--muted);
+    font-size: 9.4px;
+    text-align: right;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+  .card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    gap: 6px;
+    min-height: 48px;
+    padding: 5px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    box-shadow: 0 1px 2px rgba(15,23,42,.06);
+    break-inside: avoid;
+  }
+  .iconbox {
+    width: 56px;
+    height: 56px;
+    border-radius: 6px;
+    background: var(--tile);
+    display: grid;
+    place-items: center;
+    border: 1px solid #334155;
+    overflow: hidden;
+  }
+  .iconbox img {
+    max-width: 52px;
+    max-height: 52px;
+    object-fit: contain;
+    image-rendering: auto;
+    filter: invert(1) brightness(1.9) contrast(1.15);
+  }
+  .name {
+    font-weight: 800;
+    font-size: 12px;
+    margin-bottom: 1px;
+  }
+  .meta {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 9.5px;
+    margin-bottom: 2px;
+  }
+  .summary {
+    font-size: 9.6px;
+  }
+  .mini {
+    color: var(--muted);
+    font-size: 9.2px;
+    margin-top: 1px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0 3px;
+    border: 1px solid #94a3b8;
+    border-radius: 999px;
+    color: #334155;
+    margin-right: 2px;
+    white-space: nowrap;
+  }
+  .detail {
+    display: none;
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    top: calc(100% - 1px);
+    z-index: 20;
+    background: #ffffff;
+    border: 1px solid #64748b;
+    border-radius: 7px;
+    box-shadow: 0 10px 24px rgba(15,23,42,.22);
+    padding: 6px;
+    color: var(--ink);
+    font-size: 10px;
+    min-width: 260px;
+  }
+  .card:hover .detail, .card:focus-within .detail { display: block; }
+  .card:nth-child(4n) .detail { left: auto; right: 4px; }
+  .card:nth-last-child(-n+4) .detail { top: auto; bottom: calc(100% - 1px); }
+  .detail h2 {
+    margin: 0 0 4px;
+    font-size: 12px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border-top: 1px solid #e2e8f0;
+    padding: 2px 3px;
+    vertical-align: top;
+    text-align: left;
+  }
+  th {
+    color: #334155;
+    font-size: 9px;
+    background: #f8fafc;
+  }
+  .move { font-weight: 700; white-space: nowrap; }
+  .warn { color: var(--warn); font-weight: 700; }
+  footer {
+    margin-top: 5px;
+    padding-top: 4px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 8.7px;
+  }
+  a { color: #0f766e; text-decoration: none; }
+  @media print {
+    body { background: #fff; }
+    .page { padding: 0; max-width: none; }
+    .card { box-shadow: none; }
+    .detail { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+<header>
+  <h1>Slay the Spire 2 Bosses - map icons + exact move values</h1>
+  <div class="note">Hover or focus a card for full move table. Icons use inverted + brightened styling for visibility. Default view is compressed for one A4 landscape page.</div>
+</header>
+<section class="grid">
+
+<!-- Act 1 -->
+<article class="card" tabindex="0">
+  <div class="iconbox"><img alt="Vantom" src="https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-Vantom.png?width=96"></div>
+  <div><div class="name">Vantom</div><div class="meta">Act 1 · HP 173</div><div class="summary">7, 6x2, 27, +2 Str. Status/burst deck pollution.</div><div class="mini"><span class="badge">Ink Blot</span><span class="badge">Inky Lance</span><span class="badge">Dismember</span></div></div>
+  <div class="detail"><h2>Vantom</h2><table><tr><th>Move</th><th>Effect</th></tr><tr><td class="move">Ink Blot</td><td>Attack: 7 damage.</td></tr><tr><td class="move">Inky Lance</td><td>Attack: 6 damage 2 times.</td></tr><tr><td class="move">Dismember</td><td>Attack + Status: 27 damage.</td></tr><tr><td class="move">Prepare</td><td>Buff: gain 2 Strength.</td></tr></table></div>
+</article>
+
+<article class="card" tabindex="0">
+  <div class="iconbox"><img alt="The Kin" src="https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-TheKin.png?width=96"></div>
+  <div><div class="name">The Kin</div><div class="meta">Act 1 · Priest HP 190 · Followers HP 58-59</div><div class="summary">Priest: 8+Frail, 8+Weak, 3x3, +2 Str. Followers: 5, 2x2, +2 Str.</div><div class="mini"><span class="badge">Priest</span><span class="badge">2 Followers</span></div></div>
+  <div class="detail"><h2>The Kin</h2><table><tr><th>Unit</th><th>Move</th><th>Effect</th></tr><tr><td>Priest</td><td class="move">Orb of Frailty</td><td>8 damage, apply 1 Frail.</td></tr><tr><td>Priest</td><td class="move">Orb of Weakness</td><td>8 damage, apply 1 Weak.</td></tr><tr><td>Priest</td><td class="move">Beam</td><td>3 damage 3 times.</td></tr><tr><td>Priest</td><td class="move">Ritual</td><td>Gain 2 Strength.</td></tr><tr><td>Follower</td><td class="move">Quick Slash</td><td>5 damage.</td></tr><tr><td>Follower</td><td class="move">Boomerang</td><td>2 damage 2 times.</td></tr><tr><td>Follower</td><td class="move">Power Dance</td><td>Gain 2 Strength.</td></tr></table></div>
+</article>
+
+<article class="card" tabindex="0">
+  <div class="iconbox"><img alt="Ceremonial Beast" src="https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-CeremonialBeast.png?width=96"></div>
+  <div><div class="name">Ceremonial Beast</div><div class="meta">Act 1 · HP 252</div><div class="summary">Plow 18 +2 Str, Stomp 15, Crush 17 +3 Str, Beast Cry 1 Ringing.</div><div class="mini"><span class="badge">Plow 150</span><span class="badge">Ringing</span></div></div>
+  <div class="detail"><h2>Ceremonial Beast</h2><table><tr><th>Move</th><th>Effect</th></tr><tr><td class="move">Stamp</td><td>Buff: apply 150 Plow to self.</td></tr><tr><td class="move">Plow</td><td>18 damage. Gain 2 Strength.</td></tr><tr><td class="move">Stun</td><td>Stunned. Does nothing.</td></tr><tr><td class="move">Beast Cry</td><td>Apply 1 Ringing to player.</td></tr><tr><td class="move">Stomp</td><td>15 damage.</td></tr><tr><td class="move">Crush</td><td>17 damage. Gain 3 Strength.</td></tr></table></div>
+</article>
+
+<!-- Act 2 -->
+<article class="card" tabindex="0">
+  <div class="iconbox"><img alt="The Insatiable" src="https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-TheInsatiable.png?width=96"></div>
+  <div><div class="name">The Insatiable</div><div class="meta">Act 2 · HP 321</div><div class="summary">8x2, 8x2, 28, +2 Str. Liquify Ground is Buff + Status.</div><div class="mini"><span class="badge">Race</span><span class="badge">Status</span></div></div>
+  <div class="detail"><h2>The Insatiable</h2><table><tr><th>Move</th><th>Effect</th></tr><tr><td class="move">Liquify Ground</td><td>Buff + Status.</td></tr><tr><td class="move">Thrash Move 1</td><td>8 damage 2 times.</td></tr><tr><td class="move">Thrash Move 2</td><td>8 damage 2 times.</td></tr><tr><td class="move">Lunging Bite</td><td>28 damage.</td></tr><tr><td class="move">Salivate</td><td>Gain 2 Strength.</td></tr></table></div>
+</article>
+
+<article class="card" tabindex="0">
+  <div class="iconbox"><img alt="Knowledge Demon" src="https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-KnowledgeDemon.png?width=96"></div>
+  <div><div class="name">Knowledge Demon</div><div class="meta">Act 2 · HP 379</div><div class="summary">17, 8x3, 11 + heal +2 Str. Curse of Knowledge is debuff.</div><div class="mini"><span class="badge">HP wall</span><span class="badge">Debuff</span></div></div>
+  <div class="detail"><h2>Knowledge Demon</h2><table><tr><th>Move</th><th>Effect</th></tr><tr><td class="move">Curse of Knowledge</td><td>Debuff.</td></tr><tr><td class="move">Slap</td><td>17 damage.</td></tr><tr><td class="move">Knowledge Overwhelming</td><td>8 damage 3 times.</td></tr><tr><td class="move">Ponder</td><td>11 damage. Heal + gain 2 Strength.</td></tr></table></div>
+</article>
+
+<article class="card" tabindex="0">
+  <div class="iconbox"><img alt="Kaiser Crab" src="https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-KaiserCrab.png?width=96"></div>
+  <div><div class="name">Kaiser Crab</div><div class="meta">Act 2 · Crusher HP 199 · Rocket HP 189</div><div class="summary">Crusher: 12, 4, 6x2 +2 Weak/Frail, +2 Str, 12+18 Block. Rocket: 3,18,+2 Str,31.</div><div class="mini"><span class="badge">Two claws</span><span class="badge">Block test</span></div></div>
+  <div class="detail"><h2>Kaiser Crab</h2><table><tr><th>Unit</th><th>Move</th><th>Effect</th></tr><tr><td>Crusher</td><td class="move">Thrash</td><td>12 damage.</td></tr><tr><td>Crusher</td><td class="move">Enlarging Strike</td><td>4 damage.</td></tr><tr><td>Crusher</td><td class="move">Bug Sting</td><td>6 damage 2 times. Apply 2 Weak and 2 Frail.</td></tr><tr><td>Crusher</td><td class="move">Adapt</td><td>Gain 2 Strength.</td></tr><tr><td>Crusher</td><td class="move">Guarded Strike</td><td>12 damage. Gain 18 Block.</td></tr><tr><td>Rocket</td><td class="move">Targeting Reticle</td><td>3 damage.</td></tr><tr><td>Rocket</td><td class="move">Precision Beam</td><td>18 damage.</td></tr><tr><td>Rocket</td><td class="move">Charge Up</td><td>Gain 2 Strength.</td></tr><tr><td>Rocket</td><td class="move">Laser</td><td>31 damage.</td></tr><tr><td>Rocket</td><td class="move">Recharge</td><td>Sleep.</td></tr></table></div>
+</article>
+
+<!-- Act 3 -->
+<article class="card" tabindex="0">
+  <div class="iconbox"><img alt="Lagavulin Matriarch" src="https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-LagavulinMatriarch.png?width=96"></div>
+  <div><div class="name">Lagavulin Matriarch</div><div class="meta">Act 3 · HP 222</div><div class="summary">Sleep, 19, 12 +12 Block, 9x2, +2 Str.</div><div class="mini"><span class="badge">Armor opener</span><span class="badge">Debuff stacker</span></div></div>
+  <div class="detail"><h2>Lagavulin Matriarch</h2><table><tr><th>Move</th><th>Effect</th></tr><tr><td class="move">Sleep</td><td>Sleep.</td></tr><tr><td class="move">Slash</td><td>19 damage.</td></tr><tr><td class="move">Slash2</td><td>12 damage. Gain 12 Block.</td></tr><tr><td class="move">Disembowel</td><td>9 damage 2 times.</td></tr><tr><td class="move">Soul Siphon</td><td>Debuff + Buff: gain 2 Strength.</td></tr></table></div>
+</article>
+
+<article class="card" tabindex="0">
+  <div class="iconbox"><img alt="Soul Fysh" src="https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-SoulFysh.png?width=96"></div>
+  <div><div class="name">Soul Fysh</div><div class="meta">Act 3 · HP 211</div><div class="summary">16, 7+Status, +2 Intangible, 11 +3 Vulnerable. Beckon status pressure.</div><div class="mini"><span class="badge">Tempo</span><span class="badge">Intangible</span></div></div>
+  <div class="detail"><h2>Soul Fysh</h2><table><tr><th>Move</th><th>Effect</th></tr><tr><td class="move">Beckon</td><td>Status.</td></tr><tr><td class="move">De-Gas</td><td>16 damage.</td></tr><tr><td class="move">Gaze</td><td>7 damage + Status.</td></tr><tr><td class="move">Fade</td><td>Gain 2 Intangible.</td></tr><tr><td class="move">Scream</td><td>11 damage. Apply 3 Vulnerable.</td></tr></table></div>
+</article>
+
+<article class="card" tabindex="0">
+  <div class="iconbox"><img alt="The Queen" src="https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-Queen.png?width=96" onerror="this.src='https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-TheQueen.png?width=96'"></div>
+  <div><div class="name">The Queen</div><div class="meta">Act 3 · HP 400 · Amalgam HP 199</div><div class="summary">3 Bind, 99 Frail/Weak/Vuln, +20 Block, 3x5, 15, +2 Str. Minion hits 18/18/8x3/14/14.</div><div class="mini"><span class="badge">Minion</span><span class="badge">Debuff spike</span></div></div>
+  <div class="detail"><h2>The Queen</h2><table><tr><th>Unit</th><th>Move</th><th>Effect</th></tr><tr><td>Queen</td><td class="move">Puppet Strings</td><td>Apply 3 Chains of Binding.</td></tr><tr><td>Queen</td><td class="move">You're Mine</td><td>Apply 99 Frail, 99 Weak, 99 Vulnerable.</td></tr><tr><td>Queen</td><td class="move">Burn Bright for Me</td><td>Gain 20 Block.</td></tr><tr><td>Queen</td><td class="move">Off With Your Head</td><td>3 damage 5 times.</td></tr><tr><td>Queen</td><td class="move">Execution</td><td>15 damage.</td></tr><tr><td>Queen</td><td class="move">Enrage</td><td>Gain 2 Strength.</td></tr><tr><td>Amalgam</td><td class="move">Tackle 1/2</td><td>18 damage.</td></tr><tr><td>Amalgam</td><td class="move">Beam</td><td>8 damage 3 times.</td></tr><tr><td>Amalgam</td><td class="move">Tackle 3/4</td><td>14 damage.</td></tr></table></div>
+</article>
+
+<article class="card" tabindex="0">
+  <div class="iconbox"><img alt="Waterfall Giant" src="https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-WaterfallGiant.png?width=96"></div>
+  <div><div class="name">Waterfall Giant</div><div class="meta">Act 3 · HP 250</div><div class="summary">+15 Steam, 15+Weak+3 Steam, 10+3 Steam, heal+3 Steam, 13+3 Steam, explode special.</div><div class="mini"><span class="badge">Steam</span><span class="badge">Endurance</span></div></div>
+  <div class="detail"><h2>Waterfall Giant</h2><table><tr><th>Move</th><th>Effect</th></tr><tr><td class="move">Pressurize</td><td>Gain 15 Steam Eruption.</td></tr><tr><td class="move">Stomp</td><td>15 damage. Apply 1 Weak. Gain 3 Steam Eruption.</td></tr><tr><td class="move">Ram</td><td>10 damage. Gain 3 Steam Eruption.</td></tr><tr><td class="move">Siphon</td><td>Heal + gain 3 Steam Eruption.</td></tr><tr><td class="move">Pressure Gun</td><td>Attack + gain 3 Steam Eruption. Damage value not listed by STS2.GG.</td></tr><tr><td class="move">Pressure Up</td><td>13 damage. Gain 3 Steam Eruption.</td></tr><tr><td class="move">About To Blow</td><td>Stun.</td></tr><tr><td class="move">Explode</td><td>Special.</td></tr></table></div>
+</article>
+
+<article class="card" tabindex="0">
+  <div class="iconbox"><img alt="Test Subject" src="https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-TestSubject.png?width=96"></div>
+  <div><div class="name">Test Subject #C</div><div class="meta">Act 3 · HP variable</div><div class="summary">20, 14+1 Vuln, 30, 10, 10x3, 45, +2 Str. Respawn adds 1 Painful Stabs +1 Nemesis.</div><div class="mini"><span class="badge">Phases</span><span class="badge">Revive</span></div></div>
+  <div class="detail"><h2>Test Subject #C</h2><table><tr><th>Move</th><th>Effect</th></tr><tr><td class="move">Respawn</td><td>Heal + Buff: apply 1 Painful Stabs and 1 Nemesis to self.</td></tr><tr><td class="move">Bite</td><td>20 damage.</td></tr><tr><td class="move">Skull Bash</td><td>14 damage. Apply 1 Vulnerable.</td></tr><tr><td class="move">Pounce</td><td>30 damage.</td></tr><tr><td class="move">Multi Claw</td><td>10 damage.</td></tr><tr><td class="move">Phase3 Lacerate</td><td>10 damage 3 times.</td></tr><tr><td class="move">Big Pounce</td><td>45 damage.</td></tr><tr><td class="move">Burning Growl</td><td>Status + Buff: gain 2 Strength.</td></tr></table></div>
+</article>
+
+<article class="card" tabindex="0">
+  <div class="iconbox"><img alt="Aeonglass" src="https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-Aeonglass.png?width=96"></div>
+  <div><div class="name">Aeonglass</div><div class="meta">Act 3 · HP 512-535</div><div class="summary">Main replacement for Doormaker. Ebb 26 + Block, Eye Lasers 11x2, Increasing Intensity +3 Str + Wither.</div><div class="mini"><span class="badge">Wither</span><span class="badge">Artifact 3</span><span class="badge warn">values volatile</span></div></div>
+  <div class="detail"><h2>Aeonglass</h2><table><tr><th>Move</th><th>Effect</th></tr><tr><td class="move">Start</td><td>Artifact 3. Withering Presence.</td></tr><tr><td class="move">Withering Presence</td><td>Current sources disagree: STS2.GG says check in-game tooltip; external guides list every 4 or 6 cards adding Wither.</td></tr><tr><td class="move">Ebb</td><td>Single-hit attack. Listed as 26 damage and Block; STS2.GG confirms Block moved to Ebb in v0.107.0.</td></tr><tr><td class="move">Eye Lasers</td><td>11 damage 2 times.</td></tr><tr><td class="move">Increasing Intensity</td><td>Gain 3 Strength, add Wither. Some older/current guide mirrors list 33 Block, but STS2.GG says Block is no longer on this move.</td></tr></table></div>
+</article>
+
+<article class="card" tabindex="0">
+  <div class="iconbox"><img alt="Doormaker" src="https://slaythespire.wiki.gg/wiki/Special:Redirect/file/StS2_Map-Doormaker.png?width=96"></div>
+  <div><div class="name">Doormaker</div><div class="meta">Legacy / removed · HP 489 · Door HP 155</div><div class="summary">Doormaker: stun, 31, 40 +5 Str + escape. Door: 25, 20 +3 Str, 15x2.</div><div class="mini"><span class="badge warn">Legacy</span><span class="badge">Replaced</span></div></div>
+  <div class="detail"><h2>Doormaker / Door legacy</h2><table><tr><th>Unit</th><th>Move</th><th>Effect</th></tr><tr><td>Door</td><td class="move">Dramatic Open</td><td>25 damage.</td></tr><tr><td>Door</td><td class="move">Enforce</td><td>20 damage. Gain 3 Strength.</td></tr><tr><td>Door</td><td class="move">Door Slam</td><td>15 damage 2 times.</td></tr><tr><td>Door</td><td class="move">Dead</td><td>Unknown.</td></tr><tr><td>Doormaker</td><td class="move">What Is It</td><td>Stun.</td></tr><tr><td>Doormaker</td><td class="move">Beam</td><td>31 damage.</td></tr><tr><td>Doormaker</td><td class="move">Get Back In</td><td>40 damage. Gain 5 Strength. Escape.</td></tr></table></div>
+</article>
+
+</section>
+<footer>
+  Numbers are sourced from STS2.GG monster pages for Main v0.107.1 where listed. Aeonglass is marked volatile because STS2.GG gives HP and current mechanic notes but omits exact current move numbers; numeric Aeonglass values use STS2 Guide / Spire Codex cross-reference. Wiki.gg map icons are loaded through file redirects. Nightreign / “Escape” style mod did not list additional custom bosses in the checked mod description.
+</footer>
+</main>
+</body>
+</html>
